@@ -1,0 +1,8 @@
+1,输入地址：http://127.0.0.1:8000/books/python/ ，回车
+
+2,urls.py 路由： “books/python/”
+
+3,views.hello_books(request, "python") 
+
+4,render(request,'hello_books.html',{"books_name":"python"})
+

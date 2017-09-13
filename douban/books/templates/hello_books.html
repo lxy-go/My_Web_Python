@@ -1,0 +1,45 @@
+<html>
+<body>
+<!--<h1>欢迎浏览 {{books_name.1001}}</h1> -->
+<!--欢迎浏览{{books_name.name}} 
+<br>
+欢迎浏览{{books_name.get_name}} -->
+
+{%comment%}
+{% if books_name == "python" %}
+欢迎浏览 {{books_name}}
+{%elif books_name == "django" %}
+欢迎浏览 {{books_name}}
+{% endif%}
+
+{%ifequal books_name1 books_name2 %}
+两本书名一样，都是 {{books_name1}}
+{%endifequal%}
+
+{%ifnotequal books_name1 books_name2 %}
+两本书名不一样，分别是 {{books_name1}}， {{books_name2}}
+{%endifnotequal%}
+
+{%if "Python" in books_name %}
+欢迎浏览 python
+{%endif%}
+
+{%for i in books_name%}
+{%if forloop.first %}
+<li> 这是第一本书：{{i}} </li>
+{%else%}
+<li> {{i}} </li>
+{%endif%}
+{%endfor%}
+
+{%for i in books_name%}
+{%if forloop.counter == 2 %}
+<li> 这是中间一本书：{{i}} </li>
+{%endif%}
+{%endfor%}
+{%endcomment%}
+
+<a href = "{% url 'test_alias' %}">test页面</a>
+</body>
+</html>
+
